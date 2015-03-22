@@ -3,6 +3,7 @@ package com.example.sarahahmed.practice;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,11 +32,19 @@ public class MyFragment extends Fragment implements AdapterView.OnItemClickListe
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        comm = (Communicator) activity;
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.e("sarah", "item clicked");
         comm.respond(position);
+    }
+
+    public interface Communicator {
+        public abstract void respond(int pos);
+    }
+
+    public void setCommunicator(Communicator c) {
+        comm = c;
     }
 }

@@ -13,9 +13,4 @@
         android:name="com.example.sarahahmed.practice.MyFragment"
         android:id="@+id/fragment" />
 
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:name="com.example.sarahahmed.practice.MyFragment2"
-        android:id="@+id/fragment2" />
 </LinearLayout>
