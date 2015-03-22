@@ -3,124 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background = "#EE99AA"
+    android:background = "#00BBFF"
     android:id="@+id/my_layout_main">
 
-    <RelativeLayout
+
+    <fragment
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="match_parent">
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add A"
-        android:id="@+id/btn_addA"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:name="com.example.sarahahmed.practice.MyFragment"
+        android:id="@+id/fragment" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add B"
-        android:id="@+id/btn_AddB"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/btn_addA"
-        android:layout_toEndOf="@+id/btn_addA" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remove A"
-        android:id="@+id/btn_removeA"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/btn_AddB"
-        android:layout_toEndOf="@+id/btn_AddB" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remove B"
-        android:id="@+id/btn_removeB"
-        android:layout_below="@+id/btn_addA"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detach A"
-        android:id="@+id/btn_detachA"
-        android:layout_below="@+id/btn_addA"
-        android:layout_toRightOf="@+id/btn_removeB"
-        android:layout_toEndOf="@+id/btn_removeB" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detach B"
-        android:id="@+id/btn_detachB"
-        android:layout_below="@+id/btn_AddB"
-        android:layout_toRightOf="@+id/btn_detachA"
-        android:layout_toEndOf="@+id/btn_detachA" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Attach A"
-        android:id="@+id/btn_attachA"
-        android:layout_below="@+id/btn_removeB"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Attach B"
-        android:id="@+id/btn_attachB"
-        android:layout_below="@+id/btn_removeB"
-        android:layout_toRightOf="@+id/btn_attachA"
-        android:layout_toEndOf="@+id/btn_attachA" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Replace A with B"
-        android:id="@+id/btn_replaceAwB"
-        android:layout_below="@+id/btn_detachB"
-        android:layout_toRightOf="@+id/btn_attachB"
-        android:layout_toEndOf="@+id/btn_attachB" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Replace B with A"
-        android:id="@+id/btn_ReplaceBwA"
-        android:layout_below="@+id/btn_attachA"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <fragment
-            android:layout_margin="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:name="com.example.sarahahmed.practice.MyFragment"
-            android:id="@+id/fragment3" />
-
-        <fragment
-            android:layout_margin="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:name="com.example.sarahahmed.practice.MyFragment2"
-            android:id="@+id/fragment4" />
-    </LinearLayout>
 </LinearLayout>
