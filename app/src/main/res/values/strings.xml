@@ -27,4 +27,11 @@
 
     <string name="title_activity_another2">Another2</string>
 
+    <string-array name="main_list">
+        <item>Fragment Object States and transactions</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="title_activity_main_the_main">MainTheMain</string>
+
 </resources>
