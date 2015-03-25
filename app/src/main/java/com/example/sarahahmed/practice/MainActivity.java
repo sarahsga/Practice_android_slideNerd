@@ -28,12 +28,16 @@ public class MainActivity extends ActionBarActivity {
     MyFragment frag;
     MyFragment2 frag2;
 
+    StringBuilder strBuilder;
+
+    int backCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        backCount = 0;
         manager = getFragmentManager();
+        strBuilder = new StringBuilder("");
     }
 
     @Override
@@ -47,20 +51,26 @@ public class MainActivity extends ActionBarActivity {
         MyFragment frag = new MyFragment();
         transaction = manager.beginTransaction();
         transaction.add(R.id.linearLayout1,frag,"A");
+        transaction.addToBackStack("AddA");
         transaction.commit();
+        backCount++;
     }
     public void AddB(View v) {
         MyFragment2 frag2 = new MyFragment2();
         transaction = manager.beginTransaction();
         transaction.add(R.id.linearLayout1,frag2,"B");
+        transaction.addToBackStack("AddB");
         transaction.commit();
+        backCount++;
     }
     public void RemoveA(View v) {
         frag = (MyFragment)manager.findFragmentByTag("A");
         if ( frag != null ){
             transaction = manager.beginTransaction();
             transaction.remove(frag);
+            transaction.addToBackStack("RemoveA");
             transaction.commit();
+            backCount++;
         }
     }
     public void RemoveB(View v) {
@@ -68,7 +78,9 @@ public class MainActivity extends ActionBarActivity {
         if ( frag2 != null ){
             transaction = manager.beginTransaction();
             transaction.remove(frag2);
+            transaction.addToBackStack("RemoveB");
             transaction.commit();
+            backCount++;
         }
     }
     public void AttachA(View v) {
@@ -76,7 +88,9 @@ public class MainActivity extends ActionBarActivity {
         if ( frag != null ){
             transaction = manager.beginTransaction();
             transaction.attach(frag);
+            transaction.addToBackStack("AttachA");
             transaction.commit();
+            backCount++;
         }
     }
     public void AttachB(View v) {
@@ -84,7 +98,9 @@ public class MainActivity extends ActionBarActivity {
         if ( frag2 != null ){
             transaction = manager.beginTransaction();
             transaction.attach(frag2);
+            transaction.addToBackStack("AttachB");
             transaction.commit();
+            backCount++;
         }
     }
     public void DetachA(View v) {
@@ -92,7 +108,9 @@ public class MainActivity extends ActionBarActivity {
         if ( frag != null ){
             transaction = manager.beginTransaction();
             transaction.detach(frag);
+            transaction.addToBackStack("DetachA");
             transaction.commit();
+            backCount++;
         }
     }
     public void DetachB(View v) {
@@ -100,7 +118,9 @@ public class MainActivity extends ActionBarActivity {
         if ( frag2 != null ){
             transaction = manager.beginTransaction();
             transaction.detach(frag2);
+            transaction.addToBackStack("DetachB");
             transaction.commit();
+            backCount++;
         }
     }
     public void ReplaceAwB(View v) {
@@ -109,7 +129,9 @@ public class MainActivity extends ActionBarActivity {
             frag2 = new MyFragment2();
             transaction = manager.beginTransaction();
             transaction.replace(R.id.linearLayout1,frag2,"B");
+            transaction.addToBackStack("ReplaceAwB");
             transaction.commit();
+            backCount++;
         }
     }
     public void ReplaceBwA(View v) {
@@ -118,7 +140,20 @@ public class MainActivity extends ActionBarActivity {
             frag = new MyFragment();
             transaction = manager.beginTransaction();
             transaction.replace(R.id.linearLayout1,frag,"A");
+            transaction.addToBackStack("ReplaceBwA");
             transaction.commit();
+            backCount++;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if ( backCount == 0) {
+            super.onBackPressed();
+        } else {
+            manager.popBackStack();
+            backCount--;
+        }
+    }
+
 }

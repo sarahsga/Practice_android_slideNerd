@@ -109,15 +109,27 @@
         android:layout_below="@+id/btn_attachA"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/btnBack"
+            android:layout_below="@+id/btn_ReplaceBwA"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_margin="5dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/linearLayout1">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout1"></LinearLayout>
 
-    </LinearLayout>
+        </ScrollView>
+
 </LinearLayout>
